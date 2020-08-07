@@ -9,7 +9,7 @@
         >
             <GmapMarker
                 :key="index"
-                :label="m.userName.charAt(0)"
+                :label="m.userName"
                 v-for="(m, index) in markers"
                 :position="m.position"
                 :clickable="true"
@@ -123,6 +123,11 @@ export default {
                 err => {
                 this.gettingLocation = false;
                 this.errorStr = err.message;
+                },
+                {
+                  enableHighAccuracy: true,
+                  timeout: 5000,
+                  maximumAge: 0
                 }
             );
         },

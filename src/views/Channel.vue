@@ -9,7 +9,7 @@
         >
             <GmapMarker
                 :key="index"
-                :label="m.userName.charAt(0)"
+                :label="m.userName"
                 v-for="(m, index) in markers"
                 :position="m.position"
                 :clickable="true"
